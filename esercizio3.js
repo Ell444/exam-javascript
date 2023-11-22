@@ -6,16 +6,18 @@ const book = {
     year: 1925
 }
 
-const rating = book.rating;
 book.rating = 6;
 
 book.increaseRating = function (n) {
 
-    this.rating += n;
-    if(this.rating > 10) {
-       this.rating = 10;
+    book.rating += n;
+    if(book.rating > 10) {
+       book.rating = 10;
     }
 };
+
+/*book.increaseRating (7) -- Test per la funzione*/
+
 
 delete book.year;
 
@@ -25,7 +27,7 @@ for (let i = 0; i<keys.length; i++) {
     const key = keys[i];
     const value = book[key];
     console.log(`${key}: ${value}`);
-}
+};
 
 
 
